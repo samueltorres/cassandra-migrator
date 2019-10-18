@@ -1,2 +1,6 @@
-# cassandra-migration-docker
-Cassandra docker image that runs migration scripts on cassandra
+# cassandra-migrator
+
+Cassandra migrator is a tool that automates the execution of CQL scripts against a cassandra server.
+
+
+
