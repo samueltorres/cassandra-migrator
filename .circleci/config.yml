@@ -18,3 +18,11 @@ jobs:
       - run: docker build -t $DOCKER_IMAGE:$CIRCLE_SHA1 .
       - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run: docker push $DOCKER_IMAGE:$CIRCLE_SHA1
+
+
+workflows:
+  version: 2
+  build-and-publish:
+    jobs:
+      - build
+      - publish
