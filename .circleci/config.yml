@@ -3,12 +3,16 @@ jobs:
   build:
     docker:
       - image: circleci/golang:1.13
+
     working_directory: /go/src/github.com/samueltorres/cassandra-migrator
+    
     steps:
       - checkout
       - run: go get
 
   publish:
+    machine:
+      docker_layer_caching: false
     steps:
       - checkout
       - run: docker build -t $DOCKER_IMAGE:$CIRCLE_SHA1 .
