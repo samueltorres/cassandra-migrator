@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  cassandra:
+    image: cassandra:latest
+    ports:
+      - "9042:9042"
+    logging:
+      driver: none
+
+  migrator:
+    build: .
+    environment:
+      - CQLM_HOSTS=cassandra:9042
+    volumes:
+      - ./db/scripts:/db/scripts/
+    depends_on:
+      - cassandra
