@@ -1,6 +1,9 @@
 # cassandra-migrator
 Cassandra migrator is a tool that automates the execution of CQL scripts on a cassandra server.
 
+#### CI Status
+[![CircleCI](https://circleci.com/gh/samueltorres/cassandra-migrator.svg?style=svg)](https://circleci.com/gh/samueltorres/cassandra-migrator)
+
 # Requirements
 
 This tool needs cqlsh (cassandra shell) to do execution of the scritps. To install it you'll need to install pip.
