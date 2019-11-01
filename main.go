@@ -28,7 +28,7 @@ func main() {
 		password      = fs.String("password", "", "password used to be authenticated on cassandra")
 		cqlVersion    = fs.String("cqlversion", "3.4.4", "cql version used to run the scripts")
 		retries       = fs.Int("retries", 20, "number of retries connecting to cassandra hosts")
-		retryInterval = fs.Duration("retryInterval", 1000, "interval in milliseconds for each retry")
+		retryInterval = fs.Duration("retryInterval", time.Millisecond*1000, "interval in milliseconds for each retry")
 	)
 	ff.Parse(fs, os.Args[1:], ff.WithEnvVarPrefix("CM"))
 

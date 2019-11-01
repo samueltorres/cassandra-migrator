@@ -11,7 +11,8 @@ services:
   migrator:
     build: .
     environment:
-      - CQLM_HOSTS=cassandra:9042
+      - CM_HOSTS=cassandra:9042
+      - CM_RETRIES=50
     volumes:
       - ./db/scripts:/db/scripts/
     depends_on:
